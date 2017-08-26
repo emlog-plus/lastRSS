@@ -17,7 +17,8 @@ function plugin_setting_view(){
 	.entry {overflow:hidden;zoom:1;list-style: decimal inside none;font-size:14px;padding:8px;background:#DFE1E3;border-top:1px solid #E9EAEB;border-bottom:1px solid #C7CCD1;}
 	.right {float:right;display:inline;}
 	#lastRSS_form_modify {display:none;}
-</style><?php if(isset($_GET['setting'])):?>
+</style>
+<?php if(isset($_GET['setting'])):?>
 <div class="actived alert alert-success alert-dismissable">
 <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
 插件设置完成
@@ -138,7 +139,7 @@ function plugin_setting(){
 			$title = addslashes($title);
 			if (!empty($title)) {
 				updateFeed($id, $url, $title);
-				header("Location:plugin.php?plugin=lastRSS&setting=true");
+				header("Location:plugin.php?plugin=lastRSS-maste&setting=true");
 			} else {
 				emMsg("RSS修改失败，插件无法获取{$url}的标题，请自行添加标题再添加该RSS");
 			}
@@ -153,7 +154,7 @@ function plugin_setting(){
 			if (!empty($title)) {
 				insertFeed($url, $title);
 				updateLogs();
-				header("Location:plugin.php?plugin=lastRSS&setting=true");
+				header("Location:plugin.php?plugin=lastRSS-maste&setting=true");
 			} else {
 				emMsg("RSS导入失败，插件无法获取{$url}的标题，请自行添加标题再导入该RSS");
 			}
@@ -206,7 +207,7 @@ setTimeout(hideActived,2600);
 			if (confirm('确认删除这个 RSS 数据源?')) {
 				var _parent = $(this).parents('.entry');
 				var _id = _parent.data('id');
-				$.post('./plugin.php?plugin=lastRSS&action=setting&do=del', {id: _id}, function(e, s){
+				$.post('./plugin.php?plugin=lastRSS-maste&action=setting&do=del', {id: _id}, function(e, s){
 					if (s === 'success') {
 						_parent.remove();
 					} else {
