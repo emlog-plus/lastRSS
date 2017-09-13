@@ -1,8 +1,8 @@
 <?php
 !defined('EMLOG_ROOT') && exit('access deined!');
 $DB = Database::getInstance();
-require_once(EMLOG_ROOT.'/content/plugins/lastRSS-master/lastRSS_config.php');
 function plugin_setting_view(){
+	require_once(EMLOG_ROOT.'/content/plugins/lastRSS-master/lastRSS_config.php');
 	global $DB, $lastRSS_cache_time, $lastRSS_item_num, $lastRSS_is_urlshort, $lastRSS_is_blank, $lastRSS_urlshort_domain;
 ?>
 <div class="heading-bg  card-views">
