@@ -139,7 +139,7 @@ function plugin_setting(){
 			$title = addslashes($title);
 			if (!empty($title)) {
 				updateFeed($id, $url, $title);
-				header("Location:plugin.php?plugin=lastRSS-maste&setting=true");
+				header("Location:plugin.php?plugin=lastRSS-master&setting=true");
 			} else {
 				emMsg("RSS修改失败，插件无法获取{$url}的标题，请自行添加标题再添加该RSS");
 			}
@@ -154,7 +154,7 @@ function plugin_setting(){
 			if (!empty($title)) {
 				insertFeed($url, $title);
 				updateLogs();
-				header("Location:plugin.php?plugin=lastRSS-maste&setting=true");
+				header("Location:plugin.php?plugin=lastRSS-master&setting=true");
 			} else {
 				emMsg("RSS导入失败，插件无法获取{$url}的标题，请自行添加标题再导入该RSS");
 			}
