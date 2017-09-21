@@ -207,7 +207,7 @@ setTimeout(hideActived,2600);
 			if (confirm('确认删除这个 RSS 数据源?')) {
 				var _parent = $(this).parents('.entry');
 				var _id = _parent.data('id');
-				$.post('./plugin.php?plugin=lastRSS-maste&action=setting&do=del', {id: _id}, function(e, s){
+				$.post('./plugin.php?plugin=lastRSS-master&action=setting&do=del', {id: _id}, function(e, s){
 					if (s === 'success') {
 						_parent.remove();
 					} else {
